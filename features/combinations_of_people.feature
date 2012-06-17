@@ -6,4 +6,4 @@ Feature: Create Combinations of People
     Scenario: New Combinator
         Given there is no combinator for people
         When I go to the combinator link for people
-        Then I should see "New combinator created for people!"
+        Then I should see the text "Combinator for people doesn't exist yet - want to create it?"
