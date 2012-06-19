@@ -1,4 +1,8 @@
 LunchRoulette::Application.routes.draw do
+  get "roulette/index"
+
+  get "roulette/signup"
+
   get "combinator/show"
 
   # The priority is based upon order of creation:
@@ -58,5 +62,5 @@ LunchRoulette::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
     #
-  match ':combinator_name' => "combinator#show", :as => :combinator
+  root :to => 'roulette#index'
 end
