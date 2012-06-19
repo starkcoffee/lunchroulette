@@ -6,6 +6,6 @@ Feature: Create Combinations of People
     Scenario: Create A New Combinator
         Given there is no combinator for people
         When I go to the combinator link for people
-        Then I should see that it doesn't exist
-        When I choose to create it
+        Then I should see that the combinator doesn't exist
+        When I choose to create the combinator
         Then I see the form for adding a person's name to the combinator

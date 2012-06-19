@@ -6,8 +6,12 @@ When /^I go to the combinator link for (.+)$/ do |name|
     visit("/#{name}")
 end
 
-Then /^I should see that it doesn't exist/ do
-    page.should have_selector('p#msg_unknown_combinator')
+Then /^I should see that the combinator doesn't exist/ do
+    page.should have_selector('p#msg-unknown-combinator')
+end
+
+When /^I choose to create the combinator$/ do
+    find('#create-combinator').click
 end
 
 
