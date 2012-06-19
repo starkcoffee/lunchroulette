@@ -1,4 +1,4 @@
-Combinasaurus::Application.routes.draw do
+LunchRoulette::Application.routes.draw do
   get "combinator/show"
 
   # The priority is based upon order of creation:
