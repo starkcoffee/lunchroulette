@@ -1,0 +1,10 @@
+<h1>Yeehah!</h1>
+
+<div class="group">
+  <h3>Lunch Group #1</h3>
+  <ul>
+  <% @players.each do |player| %>
+    <li class="player"><%= player.name %></li>
+  <% end %>
+  </ul>
+</div>

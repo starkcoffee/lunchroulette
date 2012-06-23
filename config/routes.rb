@@ -63,6 +63,7 @@ LunchRoulette::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
     #
   root :to => 'roulette#index'
+  match 'spin' => 'roulette#spin'
 
   resources :players, :only => [:create, :show]
 end
