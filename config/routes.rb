@@ -63,5 +63,6 @@ LunchRoulette::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
     #
   root :to => 'roulette#index'
-  match 'signup' => 'roulette#signup'
+
+  resources :players
 end

@@ -1,7 +1,5 @@
 class RouletteController < ApplicationController
-  def signup
-  end
-
   def index
+    @player = Player.new
   end
 end

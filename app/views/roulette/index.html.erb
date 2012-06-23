@@ -1,5 +1,3 @@
 <h1>Sign up for Lunch Roulette!</h1>
-<%= form_tag('/signup') %>
-<p>Name: <%= text_field_tag 'name' %></p>
-<p>Email: <%= text_field_tag 'email' %></p>
-<p><%= submit_tag 'Signup!' %></p>
+<%= render 'players/form' %>
+
