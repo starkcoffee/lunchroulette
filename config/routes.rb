@@ -64,5 +64,5 @@ LunchRoulette::Application.routes.draw do
     #
   root :to => 'roulette#index'
 
-  resources :players
+  resources :players, :only => [:create, :show]
 end
