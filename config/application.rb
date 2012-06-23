@@ -62,5 +62,9 @@ module LunchRoulette
     config.generators do |g|
         g.test_framework :rspec
     end
+
+    config.generators do |g|
+      g.fixture_replacement :machinist
+    end
   end
 end
