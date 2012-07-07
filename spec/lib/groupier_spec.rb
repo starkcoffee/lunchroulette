@@ -21,12 +21,12 @@ describe Groupier do
     end
 
     context "collection larger than group size" do
-      let(:group_size) { 2 }
-      let(:collection) { ['a','b','c'] }
+      let(:group_size) { 3 }
+      let(:collection) { ['a','b','c', 'd', 'e'] }
 
       its(:size) { should == 2 }
-      its(:first) { should have(2).items }
-      its(:last) { should have(1).item }
+      its(:first) { should have(3).items }
+      its(:last) { should have(2).item }
 
       it "contains all elements" do
         subject.flatten.to_set.should == collection.to_set
@@ -43,6 +43,14 @@ describe Groupier do
 
         result.should_not eql(first_result)
       end
+    end
+
+    context "collection size mod group size is 1" do
+      let(:group_size) { 2 }
+      let(:collection) { ['a','b','c', 'd', 'e'] }
+
+      its(:size) { should == 2 }
+      its(:last) { should have(3).item }
     end
 
     context "group size is invalid" do
