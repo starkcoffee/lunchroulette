@@ -8,7 +8,8 @@ class RouletteController < ApplicationController
   end
 
   def spin
-    players = Player.all
-    @groups = groups_of(4, players)
+    @groups = groups_of(4, Player.all).map do | players |
+      Group.new("", players)
+    end
   end
 end

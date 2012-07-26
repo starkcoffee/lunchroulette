@@ -4,7 +4,7 @@
   <div class="group">
     <h3>Lunch Group #<%= index +1 %></h3>
       <ul>
-      <% group.each do |player| %>
+      <% group.players.each do |player| %>
         <li class="player"><%= player.name %></li>
       <% end %>
       </ul>
