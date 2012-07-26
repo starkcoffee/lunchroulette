@@ -3,8 +3,9 @@ require 'set'
 
 describe Groupier do
   include Groupier
-  describe 'Groupier.groups_of' do
-    subject { groups_of(group_size, collection) }
+  describe '#groups_of' do
+    let(:generated_groups) { groups_of(group_size, collection) }
+    subject { generated_groups }
 
     context "empty collection" do
       let(:group_size) { 5 }
@@ -13,14 +14,14 @@ describe Groupier do
       it { should be_empty }
     end
 
-    context "collection smaller than group size" do
+    context "collection is smaller than the desired group size" do
       let(:group_size) { 2 }
       let(:collection) { ['a'] }
 
       it { should == [['a']] }
     end
 
-    context "collection larger than group size" do
+    context "collection is larger than the desired group size" do
       let(:group_size) { 3 }
       let(:collection) { ['a','b','c', 'd', 'e'] }
 
@@ -29,31 +30,34 @@ describe Groupier do
       its(:last) { should have(2).item }
 
       it "contains all elements" do
-        subject.flatten.to_set.should == collection.to_set
+        generated_groups.flatten.to_set.should == collection.to_set
       end
 
       it "should give different groups each time" do
         first_result = groups_of(group_size, collection)
+        second_result = groups_of(group_size, collection)
 
-        result = groups_of(group_size, collection)
-        5.times do
-          break if result != first_result
-          result = groups_of(group_size, collection)
-        end
-
-        result.should_not eql(first_result)
+        second_result.should_not eql(first_result)
       end
     end
 
-    context "collection size mod group size is 1" do
+    context "desired group size would leave one person left over when" do
       let(:group_size) { 2 }
-      let(:collection) { ['a','b','c', 'd', 'e'] }
 
-      its(:size) { should == 2 }
-      its(:last) { should have(3).item }
+      context "collection is one greater than desired group" do
+        let(:collection) { ['a','b','c'] }
+        its(:size)  { should == 1 }
+        its(:first) { should have(3).items }
+      end
+
+      context "collection is greater" do
+        let(:collection) { ['a','b','c','d','e'] }
+        its(:size) { should == 2 }
+        its(:last) { should have(3).items }
+      end
     end
 
-    context "group size is invalid" do
+    context "when group size is invalid:" do
       let(:collection) { ['a','b','c'] }
 
       context "negative number" do
