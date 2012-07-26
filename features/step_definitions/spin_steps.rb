@@ -17,8 +17,3 @@ Then /^there is (\d+) lunch group\(s\)$/ do |num|
   page.all('.group').size.should == num.to_i
 end
 
-Then /^all players are listed$/ do
-  @players.each do |player|
-    page.should have_content(player.name)
-  end
-end

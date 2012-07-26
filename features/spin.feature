@@ -9,7 +9,6 @@ Feature: Play LunchRoulette
         And the number of people in a lunch group is 4
         When the croupier spins the LunchRoulette wheel
         Then there is 1 lunch group(s)
-        And all players are listed
 
     Scenario: Put players lunch groups
         Given there are 10 players
