@@ -3,8 +3,7 @@ require 'groupier'
 class RouletteController < ApplicationController
   include Groupier
 
-  # TODO - do i need this?
-  def index
+  def signup
     @player = Player.new
   end
 

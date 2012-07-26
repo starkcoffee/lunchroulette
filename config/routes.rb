@@ -1,10 +1,4 @@
 LunchRoulette::Application.routes.draw do
-  get "roulette/index"
-
-  get "roulette/signup"
-
-  get "combinator/show"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,7 +56,7 @@ LunchRoulette::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
     #
-  root :to => 'roulette#index'
+  root :to => 'roulette#signup'
   match 'spin' => 'roulette#spin'
 
   resources :players, :only => [:create, :show]
