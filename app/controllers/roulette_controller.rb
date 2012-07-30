@@ -1,15 +1,14 @@
-require 'groupier'
+require 'lunch_groupier_support'
 
 class RouletteController < ApplicationController
-  include Groupier
+  include LunchGroupierSupport
 
   def signup
     @player = Player.new
   end
 
   def spin
-    @groups = groups_of(4, Player.all).map do | players |
-      Group.new("", players)
-    end
+    @groups = lunch_groupier.create_groups
   end
+
 end

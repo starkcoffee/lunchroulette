@@ -9,7 +9,7 @@ describe "roulette/spin" do
     @groups = [group]
     render
     assert_select '.group' do
-      #assert_select '.name', group.name
+      assert_select '.name', group.name
       assert_select '.player', player1.name
       assert_select '.player', player2.name
     end

@@ -1,11 +1,11 @@
 <h1>Yeehah!</h1>
 
-<% @groups.each_with_index do |group, index| %>
-  <div class="group">
-    <h3>Lunch Group #<%= index +1 %></h3>
+<% @groups.each do |group| %>
+  <div class=group>
+    <h3>Lunch Group <span class=name><%=group.name%></span></h3>
       <ul>
       <% group.players.each do |player| %>
-        <li class="player"><%= player.name %></li>
+        <li class=player><%= player.name %></li>
       <% end %>
       </ul>
   </div>

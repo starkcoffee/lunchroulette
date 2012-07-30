@@ -3,8 +3,8 @@ require 'set'
 
 describe Groupier do
   include Groupier
-  describe '#groups_of' do
-    let(:generated_groups) { groups_of(group_size, collection) }
+  describe '#random_groups_of' do
+    let(:generated_groups) { random_groups_of(group_size, collection) }
     subject { generated_groups }
 
     context "empty collection" do
@@ -34,8 +34,8 @@ describe Groupier do
       end
 
       it "should give different groups each time" do
-        first_result = groups_of(group_size, collection)
-        second_result = groups_of(group_size, collection)
+        first_result = random_groups_of(group_size, collection)
+        second_result = random_groups_of(group_size, collection)
 
         second_result.should_not eql(first_result)
       end
