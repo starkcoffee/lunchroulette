@@ -3,7 +3,7 @@ require "spec_helper"
 describe "roulette/spin" do
   let(:player1) { Player.new.tap{|p| p.name = "Manuel" } }
   let(:player2) { Player.new.tap{|p| p.name = "Basil" } }
-  let(:group)   { Group.new("beavers", [ player1, player2 ]) }
+  let(:group)   { LunchGroup.new([ player1, player2 ], "Beavers") }
 
   it "displays a group" do
     @groups = [group]

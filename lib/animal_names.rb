@@ -1,4 +1,7 @@
+require 'random_enumerable'
+
 class AnimalNames
+  include RandomEnumerable
   @@names = [
     "Beavers",
     "Giselles",
@@ -7,7 +10,7 @@ class AnimalNames
     "Kangaroos",
   ]
 
-  def take_random(num)
-    @@names.shuffle.take(num)
+  def collection
+    @@names
   end
 end
