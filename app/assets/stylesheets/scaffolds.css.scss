@@ -1,13 +1,25 @@
+h1 {
+  padding-bottom: 20px;
+}
+
+#pic {
+  float: right;
+}
+
+body .signup {
+  background-image:url('http://ballparkbiz.files.wordpress.com/2011/01/closed-curtain.jpg');
+}
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 18px; }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px; }
 
 pre {
